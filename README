@@ -1,0 +1,17 @@
+Ciopa Cristian Mihai
+311 CA Tema 1
+
+				Archiver
+
+
+	Cerinta 0 -> Este realizata prin prelucrarea datelor de la stdin prin folosirea functiei fgets. Ulterior folosesc strtok si strcmp pentru a prelua datele de la input. In cazul in care, numele arhivei sau al directorului sunt " = " cu NULL atunci se afiseaza mesajul de eroare.
+Cand strcmp-ul gaseste create, extreac sau list acesta salveaza urmatoarele 2 variabile, apeleaza functiile respective si in cazul unei erori afiseaza "> Wrong command!".
+
+	Cerinta 1 -> Comanda create este realizata prin parsarea fiecarui rand din fisierele file.txt si usermap.txt. Sunt extrase datele necesare si sunt asezate in header-ul din union cu ajutorul snprintf-ului care face trecerea in octal si putem pune cati biti de selectie ne trebuie.
+Pentru a putea umple header-ul mtime am stocat (ziua, ora ...) si am folosit mktime pentru a primi timpul exprimat in secunde. In field-ul magic este trecut cu strcpy "GNUtar ". Checksumm este suma tuturor field-urilor.
+	
+	Cerinta 2 -> Comanda list este realizata cu ajutorul numelui arhivei. Luam din fisierul tar numele cu fread si facem asta pana la sfarsitul fisierului (italnim 512 octeti de 0). Cu fseek pozitionam cursorul la pozitia curenta. Pozitionam cursorul la inceputul urmatotului header, sarind peste partea de date a fisierelor.
+
+	Cerinta 3 -> Intai deschid file-ul cu nume arhive. Apoi folosesc fread pentru a citi din acesta. Acesta prin comenzile strcpy si strcat concateneaza numele si il formeaza pe cel cerut. Astfel, este creat fisierul in format binar, fseek fiind pe pozitia curenta. Similar cu comanda list, folosim fseek pentru a pozitiona cursorul la inceputul partii de date a fisierului cauta
+
+ 
